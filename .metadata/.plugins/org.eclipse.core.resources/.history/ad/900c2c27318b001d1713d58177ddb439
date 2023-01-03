@@ -1,0 +1,18 @@
+package FrameworkDesign.PageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import AbstractComponents.abstractComponent;
+
+public class ConfirmationPage extends abstractComponent {
+	
+	WebDriver driver;
+
+	public ConfirmationPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+
+}

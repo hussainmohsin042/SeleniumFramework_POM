@@ -1,0 +1,13 @@
+package FrameworkDesign.PageObjects;
+
+import org.openqa.selenium.By;
+
+public class LandingPage {
+	
+	WebElement userEmail=driver.findElement(By.id("userEmail")).sendKeys("hussainmohsin234@gmail.com");
+
+	driver.findElement(By.id("userPassword")).sendKeys("Test@12345");
+
+	driver.findElement(By.id("login")).click();
+
+}

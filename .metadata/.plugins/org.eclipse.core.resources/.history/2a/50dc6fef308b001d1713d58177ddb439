@@ -1,0 +1,5 @@
+package FrameworkDesign.PageObjects;
+
+public class ConfirmationPage {
+
+}

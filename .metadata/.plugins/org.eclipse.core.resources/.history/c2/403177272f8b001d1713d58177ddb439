@@ -1,0 +1,20 @@
+package FrameworkDesign.PageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import AbstractComponents.abstractComponent;
+
+public class CheckoutPage extends abstractComponent {
+	
+	
+	public CheckoutPage(WebDriver driver) {
+		super(driver);
+
+		// initialization
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+	}
+
+}

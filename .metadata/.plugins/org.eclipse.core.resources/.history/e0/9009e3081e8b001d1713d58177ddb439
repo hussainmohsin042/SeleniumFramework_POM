@@ -1,0 +1,14 @@
+package FrameworkDesign.PageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class LandingPage {
+	
+	WebElement userEmail=driver.findElement(By.id("userEmail"));
+
+	WebElement userPwd=driver.findElement(By.id("userPassword"));
+
+	WebElement login=driver.findElement(By.id("login"));
+
+}

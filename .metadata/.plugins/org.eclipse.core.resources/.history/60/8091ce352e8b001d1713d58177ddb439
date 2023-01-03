@@ -1,0 +1,45 @@
+package AbstractComponents;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import FrameworkDesign.PageObjects.CartPage;
+
+public class abstractComponent {
+	
+	WebDriver driver;
+
+	public abstractComponent(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(css="[routerlink*='cart']")
+	WebElement AddToCart;
+	
+	public void waitForElementToAppear(By findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
+	}
+	
+	public void waitForELementToDisappear(WebElement ele) throws InterruptedException
+	{
+		//4 Seconds -- Application Issue
+		Thread.sleep(1000);
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		//wait.until(ExpectedConditions.invisibilityOf(ele));
+	}
+	
+	public void goToCartPage()
+	{
+		AddToCart.click();
+		CartPage cartPage = new CartPage(driver);
+	}
+}
