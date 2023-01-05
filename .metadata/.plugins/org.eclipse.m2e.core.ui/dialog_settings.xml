@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\mopara\Desktop\Eclipse-Workpace\SeleniumFrameworkDesign_POM\src\test\java\FrameworkDesign\submitOrderTest.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,13 +26,16 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="dsfjkfhskj.djksfhjkds"/>
 			<item value="MavenProjectCreation.MavenProjectCreation"/>
 			<item value="MavenProjectCreation.MavenProject"/>
 		</list>
 		<list key="groupId">
+			<item value="dsfjkfhskj"/>
 			<item value="MavenProjectCreation"/>
 		</list>
 		<list key="artifactId">
+			<item value="djksfhjkds"/>
 			<item value="MavenProjectCreation"/>
 			<item value="MavenProject"/>
 		</list>
