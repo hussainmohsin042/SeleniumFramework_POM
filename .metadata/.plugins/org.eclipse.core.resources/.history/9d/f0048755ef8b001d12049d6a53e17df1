@@ -1,0 +1,49 @@
+package FrameworkDesign.Tests;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import FrameworkDesign.PageObjects.CartPage;
+import FrameworkDesign.PageObjects.CheckoutPage;
+import FrameworkDesign.PageObjects.ConfirmationPage;
+import FrameworkDesign.PageObjects.LandingPage;
+import FrameworkDesign.PageObjects.ProductCatalogue;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import mohsinhussain.TestComponents.BaseTest;
+
+public class submitOrderTest extends BaseTest {
+
+	@Test
+
+	public void submitOrder() throws IOException, InterruptedException {
+		String productName = "ZARA COAT 3";
+		LandingPage landingpage = launchApplication();
+
+		ProductCatalogue productcatalogue = landingpage.loginApplication("hussainmohsin234@gmail.com", "Test@12345");
+
+		List<WebElement> pro7ducts = productcatalogue.getProductList();
+		productcatalogue.addProductToCart(productName);
+		CartPage cartPage = productcatalogue.goToCartPage();
+		Boolean match = cartPage.VerifyProductDisplay(productName);
+		Assert.assertTrue(match);
+		CheckoutPage checkoutpage = cartPage.goToCheckout();
+		checkoutpage.selectCountry("india");
+		ConfirmationPage confirmationpage = checkoutpage.submitOrder();
+
+		String confirmMessage = confirmationpage.getConfirmationMesage();
+		Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		driver.close();
+	}
+
+}

@@ -12,6 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import FrameworkDesign.PageObjects.CartPage;
@@ -25,11 +26,12 @@ import mohsinhussain.TestComponents.BaseTest;
 
 public class submitOrderTest extends BaseTest {
 	String productName = "ZARA COAT 3";
-	@Test
+	
+	@Test(dataProvider = "getData", groups= {"Purchase"})
 
-	public void submitOrder() throws IOException, InterruptedException {
+	public void submitOrder(String email, String password, String productName) throws IOException, InterruptedException {
 		
-		ProductCatalogue productcatalogue = landingpage.loginApplication("hussainmohsin234@gmail.com", "Test@12345");
+		ProductCatalogue productcatalogue = landingpage.loginApplication(email, password);
 		List<WebElement> products = productcatalogue.getProductList();
 		productcatalogue.addProductToCart(productName);
 		CartPage cartPage = productcatalogue.goToCartPage();
@@ -55,4 +57,15 @@ public class submitOrderTest extends BaseTest {
 		Assert.assertTrue(ordersPage.VerifyOrderDisplay(productName));
 	}
 
+	@DataProvider
+	public Object[][] getData()
+	{
+		return new Object[][]
+				{{"hussainmohsin234@gmail.com","Test@12345","ZARA COAT 3"},{"hussainmohsin34@gmail.com","Test@12345","ADIDAS ORIGINAL"}};
+		
+		
+		
+	}
+	
+	
 }

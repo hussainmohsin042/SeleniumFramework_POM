@@ -1,35 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
+<testng-results ignored="3" total="5" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-05T04:17:24Z" name="Suite" finished-at="2023-01-05T04:17:33Z" duration-ms="9163">
+  <suite started-at="2023-01-08T09:33:07Z" name="Suite" finished-at="2023-01-08T09:33:38Z" duration-ms="31008">
     <groups>
-      <group name="ErrorHandling">
-        <method signature="ErrorValidationsTest.loginErrorValidation()[pri:0, instance:FrameworkDesign.Tests.ErrorValidationsTest@4f5991f6]" name="loginErrorValidation" class="FrameworkDesign.Tests.ErrorValidationsTest"/>
-      </group> <!-- ErrorHandling -->
+      <group name="Purchase">
+        <method signature="submitOrderTest.submitOrder(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" name="submitOrder" class="FrameworkDesign.Tests.submitOrderTest"/>
+      </group> <!-- Purchase -->
     </groups>
-    <test started-at="2023-01-05T04:17:24Z" name="Submit Order Test" finished-at="2023-01-05T04:17:24Z" duration-ms="11">
-    </test> <!-- Submit Order Test -->
-    <test started-at="2023-01-05T04:17:24Z" name="Error Validations Test" finished-at="2023-01-05T04:17:33Z" duration-ms="9163">
-      <class name="FrameworkDesign.Tests.ErrorValidationsTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameworkDesign.Tests.ErrorValidationsTest@4f5991f6]" started-at="2023-01-05T04:17:24Z" name="launchApplication" finished-at="2023-01-05T04:17:31Z" duration-ms="7769" status="PASS">
+    <test started-at="2023-01-08T09:33:07Z" name="Error Validations Test" finished-at="2023-01-08T09:33:07Z" duration-ms="17">
+    </test> <!-- Error Validations Test -->
+    <test started-at="2023-01-08T09:33:07Z" name="Submit Order Test" finished-at="2023-01-08T09:33:38Z" duration-ms="31008">
+      <class name="FrameworkDesign.Tests.submitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" started-at="2023-01-08T09:33:07Z" name="launchApplication" finished-at="2023-01-08T09:33:17Z" duration-ms="10093" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="loginErrorValidation()[pri:0, instance:FrameworkDesign.Tests.ErrorValidationsTest@4f5991f6]" started-at="2023-01-05T04:17:31Z" name="loginErrorValidation" finished-at="2023-01-05T04:17:33Z" duration-ms="1162" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="submitOrder(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" started-at="2023-01-08T09:33:17Z" name="submitOrder" data-provider="getData" finished-at="2023-01-08T09:33:21Z" duration-ms="4106" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hussainmohsin234@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@12345]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ZARA COAT 3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" started-at="2023-01-08T09:33:21Z" name="teardown" finished-at="2023-01-08T09:33:21Z" duration-ms="252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" started-at="2023-01-08T09:33:21Z" name="launchApplication" finished-at="2023-01-08T09:33:27Z" duration-ms="5429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" started-at="2023-01-08T09:33:27Z" name="submitOrder" data-provider="getData" finished-at="2023-01-08T09:33:37Z" duration-ms="10865" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hussainmohsin34@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@12345]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ADIDAS ORIGINAL]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or passsword.]]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: .mb-3 (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\mopara\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56777}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56777/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b1bf680208f8db73109ed5f65f47ded9]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or passsword.]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:453)
-at org.testng.Assert.assertEquals(Assert.java:463)
-at FrameworkDesign.Tests.ErrorValidationsTest.loginErrorValidation(ErrorValidationsTest.java:21)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .mb-3 (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\mopara\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56777}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56777/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b1bf680208f8db73109ed5f65f47ded9
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at AbstractComponents.abstractComponent.waitForElementToAppear(abstractComponent.java:33)
+at FrameworkDesign.PageObjects.ProductCatalogue.getProductList(ProductCatalogue.java:41)
+at FrameworkDesign.Tests.submitOrderTest.submitOrder(submitOrderTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -52,15 +106,15 @@ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginErrorValidation -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:FrameworkDesign.Tests.ErrorValidationsTest@4f5991f6]" started-at="2023-01-05T04:17:33Z" name="teardown" finished-at="2023-01-05T04:17:33Z" duration-ms="179" status="PASS">
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:FrameworkDesign.Tests.submitOrderTest@61fe30]" started-at="2023-01-08T09:33:37Z" name="teardown" finished-at="2023-01-08T09:33:38Z" duration-ms="166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- FrameworkDesign.Tests.ErrorValidationsTest -->
-    </test> <!-- Error Validations Test -->
+      </class> <!-- FrameworkDesign.Tests.submitOrderTest -->
+    </test> <!-- Submit Order Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ErrorValidationTest.xml&apos; to &apos;testSuites&apos;&#x0D;&#x0A;- Original project: &apos;SeleniumFrameworkDesign_POM_Part2&apos;&#x0D;&#x0A;- Destination element: &apos;testSuites&apos;&#x0D;&#x0A;- Original element: &apos;ErrorValidationTest.xml&apos;" description="Copy file" element1="testSuites/ErrorValidationTest.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1673170271288" target="/SeleniumFrameworkDesign_POM_Part2/testSuites" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,43 @@
+package FrameworkDesign.Tests;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import FrameworkDesign.PageObjects.CartPage;
+import FrameworkDesign.PageObjects.CheckoutPage;
+import FrameworkDesign.PageObjects.ProductCatalogue;
+import mohsinhussain.TestComponents.BaseTest;
+
+public class ErrorValidations extends BaseTest {
+
+	@Test
+
+	public void loginErrorValidation() throws IOException, InterruptedException {
+		landingpage.loginApplication("hussainmohsin34@gmail.com", "Test@12345");
+		Assert.assertEquals("Incorrect email or passsword.", landingpage.getErrorMessage());
+
+	}
+	
+	@Test
+
+	public void productErrorValidation() throws IOException, InterruptedException {
+		String productName = "ZARA COAT 3";
+        ProductCatalogue productcatalogue = landingpage.loginApplication("hussainmohsin234@gmail.com", "Test@12345");
+		List<WebElement> products = productcatalogue.getProductList();
+		productcatalogue.addProductToCart(productName);
+		CartPage cartPage = productcatalogue.goToCartPage();
+		Boolean match = cartPage.VerifyProductDisplay(productName);
+		Assert.assertTrue(match);
+		CheckoutPage checkoutpage = cartPage.goToCheckout();
+		//checkoutpage.selectCountry("india");
+		//ConfirmationPage confirmationpage = checkoutpage.submitOrder();
+
+		//String confirmMessage = confirmationpage.getConfirmationMesage();
+		//Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+	}
+
+}

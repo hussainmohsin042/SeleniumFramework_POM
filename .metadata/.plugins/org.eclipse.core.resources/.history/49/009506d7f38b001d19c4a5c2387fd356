@@ -1,0 +1,23 @@
+package FrameworkDesign.Tests;
+
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import mohsinhussain.TestComponents.BaseTest;
+
+public class ErrorValidations extends BaseTest {
+
+	@Test
+
+	public void submitOrder() throws IOException, InterruptedException {
+		String productName = "ZARA COAT 3";
+        landingpage.loginApplication("hussainmohsin34@gmail.com", "Test@12345");
+        Assert.assertEquals("Incorrect email or passsword.", landingpage.getErrorMessage());
+        
+        
+	}
+
+}
