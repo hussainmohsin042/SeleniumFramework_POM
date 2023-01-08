@@ -2,6 +2,7 @@ package FrameworkDesign.Tests;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -29,11 +30,11 @@ public class submitOrderTest extends BaseTest {
 	
 	@Test(dataProvider = "getData", groups= {"Purchase"})
 
-	public void submitOrder(String email, String password, String productName) throws IOException, InterruptedException {
+	public void submitOrder(HashMap<String,String> input) throws IOException, InterruptedException {
 		
-		ProductCatalogue productcatalogue = landingpage.loginApplication(email, password);
+		ProductCatalogue productcatalogue = landingpage.loginApplication(input.get("email"), input.get("password"));
 		List<WebElement> products = productcatalogue.getProductList();
-		productcatalogue.addProductToCart(productName);
+		productcatalogue.addProductToCart(input.get("product"));
 		CartPage cartPage = productcatalogue.goToCartPage();
 		Boolean match = cartPage.VerifyProductDisplay(productName);
 		Assert.assertTrue(match);
@@ -57,15 +58,38 @@ public class submitOrderTest extends BaseTest {
 		Assert.assertTrue(ordersPage.VerifyOrderDisplay(productName));
 	}
 
+//	@DataProvider
+//	public Object[][] getData()
+//	{
+//		return new Object[][]
+//				{{"hussainmohsin234@gmail.com","Test@12345","ZARA COAT 3"},{"hussainmohsin34@gmail.com","Test@12345","ADIDAS ORIGINAL"}};
+//		
+//		
+//		
+//	}
+	
 	@DataProvider
 	public Object[][] getData()
 	{
+		HashMap<String,String> map=new HashMap<String,String>();
+		map.put("email", "hussainmohsin234@gmail.com");
+		map.put("password","Test@12345");
+		map.put("product", "ZARA COAT 3");
+		map.put("email", "hussainmohsin34@gmail.com");
+		map.put("password","Test@12345");
+		
+		HashMap<String,String> map1=new HashMap<String,String>();
+		map.put("email", "hussainmohsin34@gmail.com");
+		map.put("password","Test@12345");
+		map.put("product", "ADIDA Original");
+		map.put("email", "hussainmohsin34@gmail.com");
+		map.put("password","Test@12345");
+		
+		
+		
 		return new Object[][]
-				{{"hussainmohsin234@gmail.com","Test@12345","ZARA COAT 3"},{"hussainmohsin34@gmail.com","Test@12345","ADIDAS ORIGINAL"}};
-		
-		
+		{{map},{map1}};
 		
 	}
-	
 	
 }

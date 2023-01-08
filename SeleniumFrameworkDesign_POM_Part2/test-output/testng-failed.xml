@@ -10,7 +10,7 @@
     <classes>
       <class name="FrameworkDesign.Tests.submitOrderTest">
         <methods>
-          <include name="submitOrder" invocation-numbers="1"/>
+          <include name="submitOrder" invocation-numbers="0 1"/>
           <include name="launchApplication"/>
           <include name="teardown"/>
         </methods>
