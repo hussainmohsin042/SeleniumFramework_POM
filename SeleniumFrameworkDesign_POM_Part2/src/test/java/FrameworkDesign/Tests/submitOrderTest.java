@@ -75,15 +75,15 @@ public class submitOrderTest extends BaseTest {
 		map.put("email", "hussainmohsin234@gmail.com");
 		map.put("password","Test@12345");
 		map.put("product", "ZARA COAT 3");
-		map.put("email", "hussainmohsin34@gmail.com");
-		map.put("password","Test@12345");
+		//map.put("email", "hussainmohsin34@gmail.com");
+		//map.put("password","Test@12345");
 		
 		HashMap<String,String> map1=new HashMap<String,String>();
-		map.put("email", "hussainmohsin34@gmail.com");
-		map.put("password","Test@12345");
-		map.put("product", "ADIDA Original");
-		map.put("email", "hussainmohsin34@gmail.com");
-		map.put("password","Test@12345");
+		map1.put("email", "hussainmohsin34@gmail.com");
+		map1.put("password","Test@12345");
+		map1.put("product", "ADIDA Original");
+		//map.put("email", "hussainmohsin34@gmail.com");
+		//map.put("password","Test@12345");
 		
 		
 		
